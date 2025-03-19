@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2qyt1qsxefoa"]
+
+[ext_resource type="Texture2D" uid="uid://cysqqqeuwerj7" path="res://icon.svg" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://bfnyn3kvui1pl" path="res://rigid_body_2d.tscn" id="2_e2o6t"]
+
+[node name="Game" type="Node2D"]
+
+[node name="BackgroundSprite" type="Sprite2D" parent="."]
+scale = Vector2(50, 50)
+texture = ExtResource("1_80nbo")
+
+[node name="RigidBody2D" parent="." instance=ExtResource("2_e2o6t")]

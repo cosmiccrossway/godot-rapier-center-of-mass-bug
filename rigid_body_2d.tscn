@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfnyn3kvui1pl"]
+
+[ext_resource type="Script" uid="uid://bifafkte8555r" path="res://rigid_body_2d.gd" id="1_jiowd"]
+[ext_resource type="Texture2D" uid="uid://cysqqqeuwerj7" path="res://icon.svg" id="1_wltir"]
+[ext_resource type="PackedScene" uid="uid://nid5sf544t0q" path="res://thruster.tscn" id="3_2x7xp"]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+center_of_mass_mode = 1
+script = ExtResource("1_jiowd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(32, 0)
+texture = ExtResource("1_wltir")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-32, -64, 96, -64, 96, 64, -32, 64)
+
+[node name="CenterOfMassPosition" type="Node2D" parent="."]
+position = Vector2(32, 0)
+
+[node name="LeftThruster" parent="." instance=ExtResource("3_2x7xp")]
+position = Vector2(0, 64)
+
+[node name="RightThruster" parent="." instance=ExtResource("3_2x7xp")]
+position = Vector2(64, 64)
+thruster_side = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]

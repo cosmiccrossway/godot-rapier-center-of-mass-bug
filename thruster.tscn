@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://nid5sf544t0q"]
+
+[ext_resource type="Script" uid="uid://bjroiif0ssclj" path="res://thruster.gd" id="1_hnbbr"]
+
+[node name="Thruster" type="Node2D"]
+script = ExtResource("1_hnbbr")
+thruster_force = Vector2(0, -100)
